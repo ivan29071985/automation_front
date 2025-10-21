@@ -1,19 +1,11 @@
-name: Cypress CI/CD
+name: Cypress Tests
 
 on:
   push:
-    branches:
-      - main
-      - master
-      - develop
-  pull_request:
-    branches:
-      - main
-      - master
-      - develop
+    branches: [main, master, develop]
 
 jobs:
-  cypress-run:
+  cypress-tests:
     runs-on: windows-latest
 
     steps:
@@ -23,25 +15,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: '20'
 
       - name: Install dependencies
         run: npm ci
 
-      # Passa a mensagem do commit direto para o Cypress
-      - name: Pass commit message to Cypress
-        run: |
-          echo "GIT_COMMIT_MESSAGE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
-          echo "Commit message is: ${{ github.event.head_commit.message }}"
+      - name: Set commit message as env
+        run: echo "GIT_COMMIT_MESSAGE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
 
-      # Run Cypress tests with Allure
-      - name: Run Cypress tests with Allure
+      - name: Run Cypress in Chrome
         run: npm run cypress:run:allure
-
-      # Upload do relatório Allure
-      - name: Upload Allure Report
-        if: success() || failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-report
-          path: allure-report
