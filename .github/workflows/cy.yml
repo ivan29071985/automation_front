@@ -48,9 +48,8 @@ jobs:
       - name: Executar testes Cypress
         uses: cypress-io/github-action@v5
         with:
-
-          command: npm run cypress:run:${{ github.event.inputs.environment || 'homologacao' }}:allure -- --browser ${{ matrix.browsers }}
-
+          browser: ${{ matrix.browsers }}
+          command: npm run cypress:run:${{ github.event.inputs.environment || 'homologacao' }}:allure
         env:
           CYPRESS_DEFAULT_COMMAND_TIMEOUT: 60000
           CYPRESS_DEFAULT_TIMEOUT: 60000
