@@ -17,31 +17,34 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      # 1️⃣ Checkout do repositório
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2️⃣ Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
+      # 3️⃣ Instala dependências
       - name: Install dependencies
         run: npm ci
 
-      # Passa a mensagem do commit e já imprime no log
+      # 4️⃣ Passa a mensagem do commit para Cypress
       - name: Set commit message
         run: |
           echo "GIT_COMMIT_MESSAGE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
           echo "Commit message is: ${{ github.event.head_commit.message }}"
 
-      # Rodar Cypress com Allure
+      # 5️⃣ Rodar Cypress com Allure
       - name: Run Cypress tests with Allure
         run: npm run cypress:run:allure
 
-      # Upload do relatório Allure
+      # 6️⃣ Upload do relatório Allure
       - name: Upload Allure Report
         if: success() || failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: allure-report
           path: allure-report
