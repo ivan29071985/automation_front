@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://dev-amei.amorsaude.tech/auth/login",
+    "env": {
+        "environment": "development"
+    }
+}

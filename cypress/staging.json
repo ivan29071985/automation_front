@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://amei-staging.amorsaude.com.br/auth/login",
+    "env": {
+        "environment": "staging"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://amei.amorsaude.com.br/auth/login",
+    "env": {
+        "environment": "producao"
+    }
+}
