@@ -48,7 +48,7 @@ jobs:
       - name: Executar testes Cypress
         uses: cypress-io/github-action@v5
         with:
-          browser: ${{ matrix.browsers }}
+
           command: npm run cypress:run:${{ github.event.inputs.environment || 'homologacao' }}:allure -- --browser ${{ matrix.browsers }}
 
         env:
