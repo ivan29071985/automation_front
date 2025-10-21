@@ -605,255 +605,255 @@ describe('Grade do Profissional', () => {
 //         }
 //     })
 
-//     it('Validar breadcrumbs Home na tela agenda do profissional', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.contains('a', 'Home').click()
-//         cy.url().should('include', 'amorsaude.com.br')
-//     });
+    it('Validar breadcrumbs Home na tela agenda do profissional', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.contains('a', 'Home').click()
+        cy.url().should('include', 'amorsaude.com.br')
+    });
 
-//     it('Validar breadcrumbs Cadastro na tela agenda do profissional', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.contains('a', 'Cadastro').click()
-//         cy.url().should('include', 'amorsaude.com.br/register')
-//     });
+    it('Validar breadcrumbs Cadastro na tela agenda do profissional', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.contains('a', 'Cadastro').click()
+        cy.url().should('include', 'amorsaude.com.br/register')
+    });
 
-//     it('Validar breadcrumbs Profissionais na tela agenda do profissional', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.contains('a', 'Profissionais').click()
-//         cy.url().should('include', 'amorsaude.com.br/register/professional')
-//     });
+    it('Validar breadcrumbs Profissionais na tela agenda do profissional', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.contains('a', 'Profissionais').click()
+        cy.url().should('include', 'amorsaude.com.br/register/professional')
+    });
 
-//     it('Validar Coluna Data inicio na tela agenda do profissional', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.contains('span', 'Data início')
-//             .should('have.text', 'Data início')
-//     });
+    it('Validar Coluna Data inicio na tela agenda do profissional', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.contains('span', 'Data início')
+            .should('have.text', 'Data início')
+    });
 
-//     it('Validar Coluna Data fim na tela agenda do profissional', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.contains('span', 'Data fim')
-//             .should('have.text', 'Data fim')
-//     });
+    it('Validar Coluna Data fim na tela agenda do profissional', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.contains('span', 'Data fim')
+            .should('have.text', 'Data fim')
+    });
 
-//     it('Validar Coluna Hora Inicio na tela agenda do profissional', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.contains('span', 'Horário início')
-//             .should('have.text', 'Horário início')
-//     });
+    it('Validar Coluna Hora Inicio na tela agenda do profissional', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.contains('span', 'Horário início')
+            .should('have.text', 'Horário início')
+    });
 
-//     it('Validar Coluna Hora fim na tela agenda do profissional', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.contains('span', 'Horário fim')
-//             .should('have.text', 'Horário fim')
-//     });
+    it('Validar Coluna Hora fim na tela agenda do profissional', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.contains('span', 'Horário fim')
+            .should('have.text', 'Horário fim')
+    });
 
-//     it('Validar Coluna Especialidades na tela agenda do profissional', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.contains('span', 'Especialidades')
-//             .should('have.text', 'Especialidades')
-//     });
+    it('Validar Coluna Especialidades na tela agenda do profissional', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.contains('span', 'Especialidades')
+            .should('have.text', 'Especialidades')
+    });
 
-//     it('Validar Coluna Dia na tela agenda do profissional', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.contains('span', 'Dia')
-//             .should('have.text', 'Dia')
-//     });
+    it('Validar Coluna Dia na tela agenda do profissional', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.contains('span', 'Dia')
+            .should('have.text', 'Dia')
+    });
 
-//     it('Validar Coluna Descrição na tela agenda do profissional', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.contains('span', 'Descrição')
-//             .should('have.text', 'Descrição')
-//     });
+    it('Validar Coluna Descrição na tela agenda do profissional', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.contains('span', 'Descrição')
+            .should('have.text', 'Descrição')
+    });
 
-//     it('Validar Coluna Ações na tela agenda do profissional', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.contains('span', 'Ações')
-//             .should('have.text', 'Ações')
-//     });
+    it('Validar Coluna Ações na tela agenda do profissional', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.contains('span', 'Ações')
+            .should('have.text', 'Ações')
+    });
 
-//     it('Validar Coluna Domingo', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.wait(3000)
-//         cy.get('h5').contains(' Domingo ')
-//             .should('have.text', ' Domingo ')
-//             .should('be.visible')
-//     });
+    it('Validar Coluna Domingo', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.wait(3000)
+        cy.get('h5').contains(' Domingo ')
+            .should('have.text', ' Domingo ')
+            .should('be.visible')
+    });
 
-//     it('Validar Coluna Segunda', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.wait(3000)
-//         cy.get('h5').contains(' Segunda-feira ')
-//             .should('have.text', ' Segunda-feira ')
-//             .should('be.visible')
-//     });
+    it('Validar Coluna Segunda', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.wait(3000)
+        cy.get('h5').contains(' Segunda-feira ')
+            .should('have.text', ' Segunda-feira ')
+            .should('be.visible')
+    });
 
-//     it('Validar Coluna Terça', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.wait(3000)
-//         cy.get('h5').contains(' Terça-feira ')
-//             .should('have.text', ' Terça-feira ')
-//             .should('be.visible')
-//     });
+    it('Validar Coluna Terça', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.wait(3000)
+        cy.get('h5').contains(' Terça-feira ')
+            .should('have.text', ' Terça-feira ')
+            .should('be.visible')
+    });
 
-//     it('Validar Coluna Quarta', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.wait(3000)
-//         cy.get('h5').contains(' Quarta-feira ')
-//             .should('have.text', ' Quarta-feira ')
-//             .should('be.visible')
-//     });
+    it('Validar Coluna Quarta', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.wait(3000)
+        cy.get('h5').contains(' Quarta-feira ')
+            .should('have.text', ' Quarta-feira ')
+            .should('be.visible')
+    });
 
-//     it('Validar Coluna Quinta', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.wait(3000)
-//         cy.get('h5').contains(' Quinta-feira ')
-//             .should('have.text', ' Quinta-feira ')
-//             .should('be.visible')
-//     });
+    it('Validar Coluna Quinta', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.wait(3000)
+        cy.get('h5').contains(' Quinta-feira ')
+            .should('have.text', ' Quinta-feira ')
+            .should('be.visible')
+    });
 
-//     it('Validar Coluna Sexta', () => {
-//         const baseUrl = Cypress.env('currentBaseUrl');
-//         cy.visit(baseUrl);
-//         cy.wait(2000)
-//         cy.get('#register').click()
-//         cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
-//         cy.wait(2000)
-//         cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
-//         cy.contains('span', 'edit').click()
-//         cy.contains('span', 'Horários de atendimento').click()
-//         cy.wait(3000)
-//         cy.get('h5').contains(' Sexta-feira ')
-//             .should('have.text', ' Sexta-feira ')
-//             .should('be.visible')
-//     });
+    it('Validar Coluna Sexta', () => {
+        const baseUrl = Cypress.env('currentBaseUrl');
+        cy.visit(baseUrl);
+        cy.wait(2000)
+        cy.get('#register').click()
+        cy.contains('span', 'Lista de profissionais', { timeout: 30000 }).click()
+        cy.wait(2000)
+        cy.contains('div', 'Procure por CPF ou nome', { timeout: 20000 }).type('322.354.320-18{enter}', { timeout: 20000 })
+        cy.contains('span', 'edit').click()
+        cy.contains('span', 'Horários de atendimento').click()
+        cy.wait(3000)
+        cy.get('h5').contains(' Sexta-feira ')
+            .should('have.text', ' Sexta-feira ')
+            .should('be.visible')
+    });
 
     it('Validar Coluna Sabado', () => {
         const baseUrl = Cypress.env('currentBaseUrl');
