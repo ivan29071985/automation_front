@@ -16,11 +16,9 @@
     "rimraf": "^6.0.1",
     "xlsx": "^0.18.5"
   },
- "scripts": {
-  "cypress:run:chrome": "cross-env allure=true cypress run --browser chrome",
-  "cypress:run:allure": "npm run cypress:run:chrome && powershell -File .\\executar-allure.ps1 -Browser Chrome && npm run allure:report",
-  "allure:report": "npm run allure:generate && npm run allure:open",
-  "allure:generate": "allure generate allure-results --clean -o allure-report --report-name \"Automation-Amei-Report\""
+"scripts": {
+  "cypress:run:chrome": "cross-env cypress run --browser chrome --headless --no-sandbox --disable-gpu",
+  "cypress:run:allure": "npm run cypress:run:chrome && powershell -File .\\executar-allure.ps1 -Browser Chrome && npm run allure:report"
 },
 
   "cypress": {
