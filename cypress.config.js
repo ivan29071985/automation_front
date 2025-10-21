@@ -110,7 +110,7 @@ module.exports = defineConfig({
       config.env.MAILOSAUR_SERVER_ID = config.env.MAILOSAUR_SERVER_ID || process.env.MAILOSAUR_SERVER_ID || 'pcph7thc';
 
       const environment = process.env.CYPRESS_ENV || config.env.environment || 'homologacao';
-      config.baseUrl = config.env.baseUrl[environment] || 'https://dev-amei.amorsaude.com.br';
+      config.baseUrl = config.env.baseUrl[environment] || 'https://amei-homolog.amorsaude.com.br';
       config.env.environment = environment;
 
       return config;
