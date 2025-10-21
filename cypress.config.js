@@ -119,7 +119,7 @@ module.exports = defineConfig({
   env: {
     environment: 'development',
     baseUrl: {
-      development: 'https://dev-amei.amorsaude.tech/auth/login',
+      development: 'https://amei-homolog.amorsaude.com.br/auth/login',
       staging: 'https://amei-staging.amorsaude.com.br',
       producao: 'https://amei.amorsaude.com.br'
     },

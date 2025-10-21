@@ -1,6 +1,6 @@
 {
-    "baseUrl": "https://dev-amei.amorsaude.tech/auth/login",
+    "baseUrl": "https://amei-homolog.amorsaude.com.br/auth/login",
     "env": {
-        "environment": "development"
+        "environment": "homologacao"
     }
 }

@@ -11,7 +11,7 @@ on:
       environment:
         description: 'Ambiente para executar os testes'
         required: true
-        default: 'staging'
+        default: 'homologacao'
         type: choice
         options:
           - staging

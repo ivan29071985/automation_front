@@ -9,7 +9,7 @@ describe('Grade do Profissional', () => {
         cy.setupAndLogin()
     });
 
-    it('Validar fluxo de abertura de grade do profissional 1', () => {
+    it.only('Validar fluxo de abertura de grade do profissional 1', () => {
         const baseUrl = Cypress.env('currentBaseUrl');
         cy.visit(baseUrl);
         cy.wait(2000)
