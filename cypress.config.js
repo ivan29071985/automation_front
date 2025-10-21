@@ -66,29 +66,25 @@ module.exports = defineConfig({
         }
       });
 
-      // Determinar ambiente pelo commit
-      let commitMessage = process.env.GIT_COMMIT_MESSAGE || '';
-      commitMessage = commitMessage.toLowerCase();
+let commitMessage = process.env.GIT_COMMIT_MESSAGE || '';
+commitMessage = commitMessage.toLowerCase();
 
-      let environment = 'staging'; // default
-      if (commitMessage.includes('[hml]')) environment = 'homologacao';
-      if (commitMessage.includes('[stg]')) environment = 'staging';
-      if (commitMessage.includes('[prd]')) environment = 'producao';
+let environment = 'staging'; // padrão
+if (commitMessage.includes('[hml]')) environment = 'homologacao';
+if (commitMessage.includes('[stg]')) environment = 'staging';
+if (commitMessage.includes('[prd]')) environment = 'producao';
 
-      const baseUrls = {
-        homologacao: 'https://amei-homolog.amorsaude.com.br',
-        staging: 'https://amei-staging.amorsaude.com.br',
-        producao: 'https://amei.amorsaude.com.br'
-      };
+config.env.environment = environment;
 
-      config.baseUrl = baseUrls[environment] || baseUrls['staging'];
-      config.env.environment = environment;
+const baseUrls = {
+  homologacao: 'https://amei-homolog.amorsaude.com.br/auth/login',
+  staging: 'https://amei-staging.amorsaude.com.br/auth/login',
+  producao: 'https://amei.amorsaude.com.br/auth/login'
+};
 
-      // Mailosaur keys
-      config.env.MAILOSAUR_API_KEY = config.env.MAILOSAUR_API_KEY || process.env.MAILOSAUR_API_KEY;
-      config.env.MAILOSAUR_SERVER_ID = config.env.MAILOSAUR_SERVER_ID || process.env.MAILOSAUR_SERVER_ID || 'pcph7thc';
+config.baseUrl = baseUrls[environment];
 
-      console.log('Ambiente escolhido:', environment, 'Base URL:', config.baseUrl);
+console.log(`Ambiente escolhido: ${environment}, Base URL: ${config.baseUrl}`);
 
       return config;
     }

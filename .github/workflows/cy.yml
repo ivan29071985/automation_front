@@ -37,9 +37,11 @@ jobs:
           echo "GIT_COMMIT_MESSAGE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
           echo "Commit message is: ${{ github.event.head_commit.message }}"
 
-      # 5️⃣ Rodar Cypress com Allure
       - name: Run Cypress tests with Allure
         run: npm run cypress:run:allure
+        env:
+          GIT_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+
 
       # 6️⃣ Upload do relatório Allure
       - name: Upload Allure Report
