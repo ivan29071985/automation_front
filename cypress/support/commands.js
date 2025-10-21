@@ -7,7 +7,7 @@ Cypress.Commands.add('setupAndLogin', (email = 'ivan.santos+1@amorsaude.com', pa
     ? Cypress.env('baseUrl').staging
     : environment === 'producao' || environment === 'prod'
       ? Cypress.env('baseUrl').producao
-      : Cypress.env('baseUrl').development;
+      : Cypress.env('baseUrl').homologacao;
 
   Cypress.env('currentBaseUrl', baseUrl);
 
