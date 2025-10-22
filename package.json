@@ -4,8 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "@shelex/cypress-allure-plugin": "^2.40.2",
-    "allure-commandline": "^2.33.0",
     "cross-env": "^7.0.3",
     "cypress": "^12.2.0",
     "cypress-downloadfile": "^1.2.4",
@@ -16,13 +14,15 @@
     "rimraf": "^6.0.1",
     "xlsx": "^0.18.5"
   },
- "scripts": {
-  "cypress:run:chrome": "cross-env allure=true cypress run --browser chrome",
-  "cypress:run:allure": "npm run cypress:run:chrome && powershell -File .\\executar-allure.ps1 -Browser Chrome && npm run allure:report",
-  "allure:report": "npm run allure:generate && npm run allure:open",
-  "allure:generate": "allure generate allure-results --clean -o allure-report --report-name \"Automation-Amei-Report\""
-},
-
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:chrome": "cypress run --browser chrome",
+    "cypress:run:staging": "cypress run --env configFile=staging",
+    "cypress:run:staging:chrome": "cypress run --env configFile=staging --browser chrome",
+    "cypress:run:prod": "cypress run --env configFile=producao",
+    "cypress:run:homolog": "cypress run --env configFile=homologacao"
+  },
   "cypress": {
     "env": {
       "homologacao": {
