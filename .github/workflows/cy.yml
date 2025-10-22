@@ -31,7 +31,9 @@ jobs:
         with:
           node-version: 20
 
-
+      # 4️⃣ Instala dependências
+      - name: Install dependencies
+        run: npm ci
 
       # 5️⃣ Passa a mensagem do commit para Cypress
       - name: Set commit message
