@@ -2,58 +2,54 @@ name: Cypress CI/CD
 
 on:
   push:
-    branches:
-      - main
-      - master
-      - develop
+    branches: [main, master, develop]
   pull_request:
-    branches:
-      - main
-      - master
-      - develop
+    branches: [main, master, develop]
+  workflow_dispatch:
 
 jobs:
   cypress-run:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       # 1️⃣ Checkout do repositório
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node.js
+      # 2️⃣ Cache de dependências (acelera builds)
+      - name: Cache Node modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 3️⃣ Setup Node.js
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 3️⃣ Instala dependências
+      # 4️⃣ Instala dependências
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Passa a mensagem do commit para Cypress
+      # 5️⃣ Passa a mensagem do commit para Cypress
       - name: Set commit message
         run: |
           echo "GIT_COMMIT_MESSAGE=${{ github.event.head_commit.message }}" >> $GITHUB_ENV
           echo "Commit message is: ${{ github.event.head_commit.message }}"
 
-      # 5️⃣ Roda os testes do Cypress
+      # 6️⃣ Roda os testes do Cypress
       - name: Run Cypress tests
         run: npm run cypress:run:staging
         env:
           GIT_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
 
-      # 6️⃣ Upload de screenshots/videos em caso de falha
+      # 7️⃣ Upload de screenshots/videos em caso de falha
       - name: Upload Cypress Screenshots
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-
-      - name: Upload Cypress Videos
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-videos
-          path: cypress/videos
+          name: cy
