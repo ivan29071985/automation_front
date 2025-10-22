@@ -1,5 +1,4 @@
 const { defineConfig } = require("cypress");
-const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 const fs = require('fs');
 const path = require('path');
 
@@ -20,16 +19,6 @@ module.exports = defineConfig({
 
     setupNodeEvents(on, config) {
 
-      // Allure
-      if (config.env.allure) {
-        allureWriter(on, config, {
-          reportDir: 'allure-results',
-          reportTitle: 'Automation Report Amei',
-          testCasePrefix: 'TC-',
-          disableWebdriverStepsReporting: true,
-          disableWebdriverScreenshotsReporting: true,
-        });
-      }
 
       // Tasks úteis
       on('task', {
